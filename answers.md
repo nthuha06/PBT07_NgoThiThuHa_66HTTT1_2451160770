@@ -355,3 +355,95 @@ vì:
 - an toàn và dễ kiểm soát hơn
 
 Toán tử `==` dễ gây lỗi do JavaScript tự động convert kiểu dữ liệu.
+
+## Câu A4 — Truthy & Falsy
+
+### Các giá trị Falsy trong JavaScript
+
+Trong JavaScript, các giá trị sau được xem là Falsy:
+
+```javascript
+false
+0
+-0
+0n
+""
+null
+undefined
+NaN
+```
+
+Ngoài các giá trị trên, tất cả các giá trị còn lại đều là Truthy.
+
+### Dự đoán kết quả
+```javascript
+A
+C
+D
+G
+H
+```
+
+### Giải thích
+
+#### `if ("0")`
+
+Kết quả:
+
+```javascript
+A
+```
+
+String `"0"` không phải chuỗi rỗng nên là Truthy.
+
+#### `if ("")`
+Không in gì.
+
+Chuỗi rỗng `""` là Falsy.
+
+### `if ([])`
+Kết quả:
+
+```javascript
+C
+```
+
+Array rỗng vẫn là Truthy trong JavaScript.
+
+### `if ({})`
+Kết quả:
+
+```javascript
+D
+```
+
+Object rỗng vẫn là Tr
+
+### `if (null)`
+Không in gì.
+
+`null` là Falsy.
+
+### `if (0)`
+Không in gì.
+
+`0` là Falsy.
+
+### `if (-1)`
+Kết quả:
+
+```javascript
+G
+```
+
+Mọi số khác `0` đều là Truthy.
+
+### `if (" ")`
+Kết quả:
+
+```javascript
+H
+```
+
+Đây là chuỗi chứa dấu cách, KHÔNG phải chuỗi rỗng nên là Truthy.
+
