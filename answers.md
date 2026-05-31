@@ -474,3 +474,114 @@ const html = `
 </div>
 `;
 ```
+# Phần B
+## Câu B1 — Máy tính đơn giản
+### Code
+
+```javascript
+function calculate(num1, operator, num2) {
+
+    if (typeof num1 !== "number" || typeof num2 !== "number") {
+        return "Lỗi: Input không phải số";
+    }
+
+    if (operator === "/" && num2 === 0) {
+        return "Lỗi: Không thể chia cho 0";
+    }
+
+    switch (operator) {
+
+        case "+":
+            return num1 + num2;
+
+        case "-":
+            return num1 - num2;
+
+        case "*":
+            return num1 * num2;
+
+        case "/":
+            return num1 / num2;
+
+        case "%":
+            return num1 % num2;
+
+        case "**":
+            return num1 ** num2;
+
+        default:
+            return `Lỗi: Operator '${operator}' không hợp lệ`;
+    }
+}
+```
+
+---
+
+### Giải thích
+
+#### Hàm `calculate()`
+
+Hàm nhận:
+- số thứ nhất
+- phép toán
+- số thứ hai
+
+và trả về kết quả tương ứng.
+
+#### Kiểm tra input
+
+```javascript
+typeof num1 !== "number"
+```
+
+Nếu dữ liệu không phải number thì trả về thông báo lỗi.
+
+#### Kiểm tra chia cho 0
+
+```javascript
+if (operator === "/" && num2 === 0)
+```
+
+Ngăn trường hợp chia cho 0 gây lỗi logic.
+
+#### `switch case`
+
+Dùng để xử lý nhiều phép toán khác nhau:
+- cộng
+- trừ
+- nhân
+- chia
+- chia dư
+- lũy thừa
+
+#### Operator `**`
+
+```javascript
+2 ** 10
+```
+
+nghĩa là:
+
+```javascript
+2 mũ 10
+```
+
+Kết quả là:
+
+```javascript
+1024
+```
+
+### Kết quả chạy chương trình
+
+```javascript
+15
+
+Lỗi: Không thể chia cho 0
+
+Lỗi: Operator '^' không hợp lệ
+
+Lỗi: Input không phải số
+
+1024
+```
