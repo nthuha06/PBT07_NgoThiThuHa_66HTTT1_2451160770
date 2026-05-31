@@ -866,3 +866,54 @@ Item 2
 Item 3
 Item 4
 ```
+## Câu C2 — Hóa đơn nhà hàng
+
+### Code
+
+```javascript
+subtotal +=
+    foods[i].price *
+    foods[i].quantity;
+```
+
+```javascript
+if (subtotal > 1000000) {
+    discountPercent = 15;
+}
+else if (subtotal > 500000) {
+    discountPercent = 10;
+}
+```
+
+```javascript
+const vat =
+    afterDiscount * 0.08;
+```
+
+---
+
+### Giải thích
+
+- Chương trình sử dụng array object để lưu danh sách món ăn.
+- Dùng vòng lặp để tính tổng tiền.
+- Áp dụng:
+  - giảm giá
+  - VAT
+  - tip
+
+- Nếu là Wednesday:
+  
+```javascript
+discountPercent += 5;
+```
+
+- Dùng:
+  
+```javascript
+toLocaleString("vi-VN")
+```
+
+để format tiền Việt Nam.
+
+---
+
