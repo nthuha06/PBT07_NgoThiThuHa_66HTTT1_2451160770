@@ -655,3 +655,74 @@ Em - 9.1
 
 Phong - 3.9
 ```
+
+## Câu B4 — FizzBuzz nâng cao
+### Code
+
+```javascript
+if (i % 3 === 0) {
+    result += "Fizz";
+}
+
+if (i % 5 === 0) {
+    result += "Buzz";
+}
+```
+
+```javascript
+function customFizzBuzz(n, rules)
+```
+
+### Giải thích
+
+#### Version 1 — Classic
+
+- Dùng vòng lặp từ `1 → 100`
+- Nếu chia hết cho:
+  - `3` → thêm `"Fizz"`
+  - `5` → thêm `"Buzz"`
+
+- Nếu chia hết cả 2:
+  
+```javascript
+FizzBuzz
+```
+
+#### Version 2 — Custom Rules
+
+Chương trình sử dụng:
+
+```javascript
+rules
+```
+
+để tạo bộ luật linh hoạt.
+
+Ví dụ:
+
+```javascript
+[
+    { divisor: 3, word: "Fizz" },
+    { divisor: 5, word: "Buzz" },
+    { divisor: 7, word: "Jazz" }
+]
+```
+
+Nếu số chia hết cho nhiều divisor thì sẽ nối các từ lại.
+
+Ví dụ:
+
+```javascript
+105
+```
+
+chia hết cho:
+- 3
+- 5
+- 7
+
+Kết quả:
+
+```javascript
+FizzBuzzJazz
+```
