@@ -726,3 +726,143 @@ Kết quả:
 ```javascript
 FizzBuzzJazz
 ```
+
+# Phần C
+## Câu C1 — Debug JavaScript
+### Các lỗi trong chương trình
+#### Lỗi 1 — Thiếu validate input
+
+Code cũ:
+
+```javascript
+const gia = tinhGiaGiamGia("100000", 20)
+```
+
+`"100000"` là string nhưng chương trình không kiểm tra kiểu dữ liệu.
+
+##### Sửa:
+
+```javascript
+if (
+    typeof giaBan !== "number" ||
+    typeof phanTramGiam !== "number"
+)
+```
+
+#### Lỗi 2 — Thiếu dấu `;`
+
+Một số dòng thiếu dấu `;`.
+
+Ví dụ:
+
+```javascript
+return "Phần trăm giảm không hợp lệ"
+```
+
+##### Sửa:
+
+```javascript
+return "Phần trăm giảm không hợp lệ";
+```
+
+#### Lỗi 3 — Dùng `=` thay vì `===`
+
+Code cũ:
+
+```javascript
+if (giaSauGiam = 0)
+```
+
+Đây là phép gán, không phải phép so sánh.
+
+##### Sửa:
+
+```javascript
+if (giaSauGiam === 0)
+```
+
+#### Lỗi 4 — Truyền sai kiểu dữ liệu
+
+Code cũ:
+
+```javascript
+tinhGiaGiamGia("100000", 20)
+```
+
+`"100000"` là string.
+
+##### Sửa:
+
+```javascript
+tinhGiaGiamGia(100000, 20)
+```
+
+#### Lỗi 5 — `var` trong vòng lặp
+
+Code cũ:
+
+```javascript
+for (var i = 0; i < 5; i++)
+```
+
+Kết quả sẽ in:
+
+```javascript
+Item 5
+Item 5
+Item 5
+Item 5
+Item 5
+```
+
+Do `var` có function scope.
+
+Sau khi vòng lặp kết thúc:
+- `i = 5`
+
+Tất cả `setTimeout()` đều dùng chung biến `i`.
+
+##### Sửa:
+
+```javascript
+for (let i = 0; i < 5; i++)
+```
+
+`let` có block scope nên mỗi lần lặp sẽ tạo biến `i` riêng.
+
+Kết quả đúng:
+
+```javascript
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
+
+#### Lỗi 6 — Thiếu validate phần trăm giảm
+
+Chương trình cần kiểm tra:
+
+```javascript
+phanTramGiam < 0 ||
+phanTramGiam > 100
+```
+
+để tránh dữ liệu không hợp lệ.
+
+---
+
+##### Kết quả sau khi sửa
+
+```javascript
+Giá sau giảm: 80000đ
+
+Giá: Phần trăm giảm không hợp lệ
+
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
