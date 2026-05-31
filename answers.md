@@ -187,3 +187,171 @@ và array rỗng thành chuỗi rỗng:
 ```
 
 Sau đó thực hiện nối chuỗi.
+
+## Câu A3 — So sánh `==` vs `===`
+
+### Dự đoán kết quả
+
+```javascript
+true
+false
+true
+false
+false
+true
+false
+true
+```
+
+### Giải thích
+
+#### `5 == "5"`
+Kết quả:
+
+```javascript
+true
+```
+
+Toán tử `==` chỉ so sánh giá trị.
+
+JavaScript sẽ tự động ép kiểu:
+
+```javascript
+"5" → 5
+```
+
+Sau đó so sánh:
+
+```javascript
+5 == 5
+```
+
+nên kết quả là `true`.
+
+#### `5 === "5"`
+Kết quả:
+
+```javascript
+false
+```
+
+Toán tử `===` so sánh:
+- giá trị
+- và kiểu dữ liệu
+
+Ở đây:
+- `5` là number
+- `"5"` là string
+
+Khác kiểu dữ liệu nên kết quả là `false`.
+
+#### `null == undefined`
+Kết quả:
+
+```javascript
+true
+```
+
+Trong JavaScript, `null` và `undefined` được xem là bằng nhau khi dùng `==`.
+
+#### `null === undefined`
+
+```javascript
+null === undefined
+```
+
+Kết quả:
+
+```javascript
+false
+```
+
+Vì:
+- `null` có kiểu dữ liệu riêng
+- `undefined` cũng có kiểu dữ liệu riêng
+
+Khác kiểu nên `===` trả về `false`.
+
+#### `NaN == NaN`
+Kết quả:
+
+```javascript
+false
+```
+
+`NaN` là trường hợp đặc biệt trong JavaScript.
+
+Ngay cả `NaN` cũng không bằng chính nó.
+
+Muốn kiểm tra NaN phải dùng:
+
+```javascript
+Number.isNaN(value)
+```
+
+#### `0 == false`
+Kết quả:
+
+```javascript
+true
+```
+
+JavaScript ép kiểu:
+
+```javascript
+false → 0
+```
+
+Sau đó:
+
+```javascript
+0 == 0
+```
+
+nên kết quả là `true`.
+
+#### `0 === false`
+Kết quả:
+
+```javascript
+false
+```
+
+Vì:
+- `0` là number
+- `false` là boolean
+
+Khác kiểu dữ liệu nên `===` trả về `false`.
+
+#### `"" == false`
+Kết quả:
+
+```javascript
+true
+```
+
+JavaScript ép kiểu:
+- `"" → 0`
+- `false → 0`
+
+Sau đó:
+
+```javascript
+0 == 0
+```
+
+nên kết quả là `true`.
+
+### Kết luận
+Trong JavaScript nên ưu tiên dùng:
+
+```javascript
+===
+```
+
+vì:
+- không tự động ép kiểu
+- tránh bug khó phát hiện
+- an toàn và dễ kiểm soát hơn
+
+Toán tử `==` dễ gây lỗi do JavaScript tự động convert kiểu dữ liệu.
