@@ -585,3 +585,73 @@ Lỗi: Input không phải số
 
 1024
 ```
+
+## Câu B2 — Xử lý dữ liệu sinh viên
+
+### Code
+
+```javascript
+average =
+    math * 0.4 +
+    physics * 0.3 +
+    cs * 0.3;
+```
+
+```javascript
+if (average >= 8.0) {
+    rank = "Giỏi";
+}
+else if (average >= 6.5) {
+    rank = "Khá";
+}
+else if (average >= 5.0) {
+    rank = "Trung bình";
+}
+else {
+    rank = "Yếu";
+}
+```
+
+---
+
+### Giải thích
+
+- Chương trình sử dụng `for loop` để duyệt mảng sinh viên.
+- Tính điểm trung bình theo công thức:
+  
+```javascript
+math * 0.4 + physics * 0.3 + cs * 0.3
+```
+
+- Dùng `if...else` để xếp loại sinh viên.
+- Sử dụng biến đếm để thống kê số lượng:
+  - Giỏi
+  - Khá
+  - Trung bình
+  - Yếu
+
+- Tính điểm trung bình từng môn bằng cách cộng tổng rồi chia cho số sinh viên.
+- Tìm sinh viên cao nhất và thấp nhất bằng cách so sánh điểm trung bình.
+
+### Kết quả
+
+```javascript
+===== THỐNG KÊ =====
+
+Giỏi: 2
+Khá: 3
+Trung bình: 2
+Yếu: 1
+```
+
+```javascript
+===== CAO NHẤT =====
+
+Em - 9.1
+```
+
+```javascript
+===== THẤP NHẤT =====
+
+Phong - 3.9
+```
