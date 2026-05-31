@@ -447,3 +447,30 @@ H
 
 Đây là chuỗi chứa dấu cách, KHÔNG phải chuỗi rỗng nên là Truthy.
 
+## Câu A5 — Template Literals
+
+### Viết lại bằng Template Literal
+
+#### Cách 1
+
+```javascript
+const greeting = `Xin chào ${name}! Bạn ${age} tuổi.`;
+```
+
+#### Cách 2
+
+```javascript
+const url = `https://api.example.com/users/${userId}/orders?page=${page}`;
+```
+
+#### Cách 3
+
+```javascript
+const html = `
+<div class="card">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <span>Giá: ${price}đ</span>
+</div>
+`;
+```
